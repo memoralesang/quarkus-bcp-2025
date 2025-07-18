@@ -3,67 +3,67 @@
 <head>
     <meta charset="utf-8"/>
     <title>Expenses Client</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wingcss/0.1.8/wing.min.css"/>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="wing.min.css"/>
+    <script src="angular.min.js"></script>
     <script type="text/javascript">
-        var app = angular.module("ExpenseClient", []);
+      var app = angular.module("ExpenseClient", []);
 
-        app.controller("ExpenseClientController", function ($scope, $http) {
-            $scope.expenses = [];
+      app.controller("ExpenseClientController", function ($scope, $http) {
+        $scope.expenses = [];
 
-            $scope.form = {
-                name: "",
-                description: ""
-            };
+        $scope.form = {
+          name: "",
+          description: ""
+        };
 
-            //Now load the data from server
-            _refreshPageData();
+        //Now load the data from server
+        _refreshPageData();
 
-            //HTTP POST methods for add expenses
-            $scope.add = function () {
-                var data = {
-                    "name": $scope.form.name,
-                    "amount": $scope.form.amount,
-                    "paymentMethod": $scope.form.paymentMethod
-                };
+        //HTTP POST methods for add expenses
+        $scope.add = function () {
+          var data = {
+              "name": $scope.form.name,
+              "amount": $scope.form.amount,
+              "paymentMethod": $scope.form.paymentMethod
+          };
 
-                $http({
-                    method: "POST",
-                    url: '/expenses',
-                    data: angular.toJson(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(_success, _error);
-            };
-
-            /* Private Methods */
-            function _refreshPageData() {
-                $http({
-                    method: 'GET',
-                    url: '/expenses'
-                }).then(function successCallback(response) {
-                    $scope.expenses = response.data;
-                }, function errorCallback(response) {
-                    console.log(response.statusText);
-                });
+          $http({
+            method: "POST",
+            url: '/expenses',
+            data: angular.toJson(data),
+            headers: {
+              'Content-Type': 'application/json'
             }
+          }).then(_success, _error);
+        };
 
-            function _success(response) {
-                _refreshPageData();
-                _clearForm();
-            }
+        /* Private Methods */
+        function _refreshPageData() {
+          $http({
+            method: 'GET',
+            url: '/expenses'
+          }).then(function successCallback(response) {
+            $scope.expenses = response.data;
+          }, function errorCallback(response) {
+            console.log(response.statusText);
+          });
+        }
 
-            function _error(response) {
-                alert(response.data.message || response.statusText);
-            }
+        function _success(response) {
+          _refreshPageData();
+          _clearForm();
+        }
 
-            //Clear the form
-            function _clearForm() {
-                $scope.form.name = "";
-                $scope.form.description = "";
-            }
-        });
+        function _error(response) {
+          alert(response.data.message || response.statusText);
+        }
+
+        //Clear the form
+        function _clearForm() {
+          $scope.form.name = "";
+          $scope.form.description = "";
+        }
+      });
     </script>
 </head>
 <body ng-app="ExpenseClient" ng-controller="ExpenseClientController">
