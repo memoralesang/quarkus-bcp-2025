@@ -1,4 +1,4 @@
-# develop-review
+# test-unit
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -49,7 +49,7 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 ./mvnw package -Dnative -Dquarkus.native.container-build=true
 ```
 
-You can then execute your native executable with: `./target/develop-review-1.0.0-SNAPSHOT-runner`
+You can then execute your native executable with: `./target/test-unit-1.0.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
 
@@ -76,14 +76,3 @@ Create your first JPA entity
 Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
-
-
-### Docker
-
-docker run -d \
---name dev-postgres \
--e POSTGRES_USER=developer \
--e POSTGRES_PASSWORD=developer \
--e POSTGRES_DB=testing \
--p 5432:5432 \
-postgres:15
