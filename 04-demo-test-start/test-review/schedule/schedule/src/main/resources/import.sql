@@ -1,6 +1,5 @@
--- This file allow to write SQL commands that will be emitted in test and dev.
--- The commands are commented as their support depends of the database
--- insert into myentity (id, field) values(1, 'field-1');
--- insert into myentity (id, field) values(2, 'field-2');
--- insert into myentity (id, field) values(3, 'field-3');
--- alter sequence myentity_seq restart with 4;
+insert into schedule (id,venue_id,date) values (101, 101,'2020-9-01');
+alter sequence Schedule_SEQ restart with 102;
+insert into schedule (id,venue_id,date) values (nextval('Schedule_SEQ'), 1,'2020-9-04');
+insert into schedule (id,venue_id,date) values (nextval('Schedule_SEQ'), 1,'2020-9-05');
+insert into schedule (id,venue_id,date) values (nextval('Schedule_SEQ'), 2,'2020-9-04');
