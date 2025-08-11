@@ -14,16 +14,13 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 import java.net.URI;
 import java.util.List;
 
+
 @Path("/accounts")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class BankAccountsResource {
-
-    @Channel("new-bank-accounts-out")
-    Emitter<BankAccountWasCreated> emitter;
-
     @GET
-    public Uni<List<BankAccount>> get(){
+    public Uni<List<BankAccount>> get() {
         return BankAccount.listAll(Sort.by("id"));
     }
 
@@ -33,8 +30,7 @@ public class BankAccountsResource {
                 .<BankAccount>withTransaction(bankAccount::persist)
                 .onItem()
                 .transform(
-                        inserted->{
-                            sendBankAccountEvent(inserted.id, inserted.balance);
+                        inserted -> {
                             return Response.created(
                                     URI.create("/accounts/" + inserted.id)
                             ).build();
@@ -42,7 +38,7 @@ public class BankAccountsResource {
                 );
     }
 
-    private void sendBankAccountEvent(Long id, Long balance) {
-        emitter.send(new BankAccountWasCreated(id, balance));
+    public void sendBankAccountEvent(Long id, Long balance) {
     }
 }
+

@@ -18,29 +18,10 @@ public class AccountTypeProcessor {
     @Inject
     Mutiny.SessionFactory session;
 
-    @Incoming("new-bank-accounts-in")
-    @ActivateRequestContext
-    public Uni<Void> processNewBankAccountEvents(BankAccountWasCreated event){
-        String assignedAccountType = calculateAccountType(event.balance);
-
-        logEvent(event, assignedAccountType);
-
-        return session.withTransaction(
-                s -> BankAccount.<BankAccount>findById(event.id)
-                        .onItem()
-                        .ifNotNull()
-                        .invoke(
-                                entity -> entity.type = assignedAccountType)
-                        .replaceWithVoid()
-        );
-
+    public String calculateAccountType(Long balance) {
     }
 
-    private String calculateAccountType(Long balance) {
-        return balance >= 100000 ? "premium" : "regular";
-    }
-
-    private void logEvent(BankAccountWasCreated event, String assignedType){
+    private void logEvent(BankAccountWasCreated event, String assignedType) {
         LOGGER.infov(
                 "Processing BankAccountWasCreated - ID: {0} Balance: {1} Type: {2}",
                 event.id,
