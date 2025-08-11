@@ -1,66 +1,32 @@
-# quarkus-conference
+# Speaker Dashboard
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This is a React front-end application for the `speaker` microservice of the Quarkus Conference application used in the DO378 secure review lab.
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+This application integrates with a Keycloak server.
+See the [Keycloak Config](./src/app/services/keycloak.js) for more information about SSO configuration.
 
-## Running the application in dev mode
+## Development scripts
+```sh
+# Install development/build dependencies
+npm install
 
-You can run your application in dev mode that enables live coding using:
+# Run the linter
+npm run lint
 
-```shell script
-./mvnw quarkus:dev
+# Run the code formatter
+npm run format
+
+# Launch a tool to inspect the bundle size
+npm run bundle-profile:analyze
+
+# Run a production build (outputs to "dist" dir)
+npm run build
+
+# Start the express server (uses the dist folder so you must run "npm run build" first)
+npm run start
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
-
-## Packaging and running the application
-
-The application can be packaged using:
-
-```shell script
-./mvnw package
-```
-
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/quarkus-conference-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Related Guides
-
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+## Configurations
+* [TypeScript Config](./tsconfig.json)
+* [Webpack Config](./webpack.common.js)
+* [Editor Config](./.editorconfig)
