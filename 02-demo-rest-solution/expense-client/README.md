@@ -64,3 +64,10 @@ If you want to learn more about building native executables, please consult <htt
 Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+
+### TEST
+
+podman run --rm --name expense-service -d --network expense-net quay.io/expense-service:1.0.0-SNAPSHOT                                                         
+
+podman run -d --name expense-client -e QUARKUS_REST_CLIENT_EXPENSE_SERVICE_URL="http://expense-service:8080" -p 8090:8090 --network expense-net quay.io/expense-client:1.0.0-SNAPSHOT     
