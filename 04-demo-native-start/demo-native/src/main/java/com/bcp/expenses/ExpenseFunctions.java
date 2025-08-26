@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.expenses;
 
 import java.util.List;
 
