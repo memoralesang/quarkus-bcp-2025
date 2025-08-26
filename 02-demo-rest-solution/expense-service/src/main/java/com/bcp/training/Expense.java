@@ -1,13 +1,18 @@
-package com.bcp.model;
+package com.bcp.training;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Expense {
 
-    enum PaymentMethod {
-        CASH, CREDIT_CARD, DEBIT_CARD,
+    public enum PaymentMethod {
+        CASH, 
+        CREDIT_CARD, 
+        DEBIT_CARD
     }
 
     private UUID uuid;

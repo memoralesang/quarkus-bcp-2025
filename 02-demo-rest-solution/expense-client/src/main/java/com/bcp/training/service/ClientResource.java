@@ -1,7 +1,7 @@
-package com.bcp.service;
+package com.bcp.training.service;
 
-import com.bcp.client.ExpenseServiceClient;
-import com.bcp.model.Expense;
+import com.bcp.training.client.ExpenseServiceClient;
+import com.bcp.training.model.Expense;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;

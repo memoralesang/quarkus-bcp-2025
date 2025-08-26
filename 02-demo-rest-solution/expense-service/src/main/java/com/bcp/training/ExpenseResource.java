@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;

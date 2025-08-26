@@ -1,6 +1,6 @@
-package com.bcp.client;
+package com.bcp.training.client;
 
-import com.bcp.model.Expense;
+import com.bcp.training.model.Expense;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;

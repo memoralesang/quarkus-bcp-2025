@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -6,8 +6,10 @@ import java.util.UUID;
 
 public class Expense {
 
-    enum PaymentMethod {
-        CASH, CREDIT_CARD, DEBIT_CARD,
+    public enum PaymentMethod {
+        CASH, 
+        CREDIT_CARD, 
+        DEBIT_CARD
     }
 
     private UUID uuid;
