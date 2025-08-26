@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training.expenses;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.GET;

@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training.expenses;
 
 public class FraudScore {
     public int score;

@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training.expenses;
 
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;

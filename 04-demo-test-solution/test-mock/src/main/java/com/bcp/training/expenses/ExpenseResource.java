@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training.expenses;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.headers.Header;
