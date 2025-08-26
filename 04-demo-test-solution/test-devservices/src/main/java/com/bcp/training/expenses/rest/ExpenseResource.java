@@ -1,8 +1,8 @@
-package com.bcp.rest;
+package com.bcp.training.expenses.rest;
 
 
 
-import com.bcp.model.Expense;
+import com.bcp.training.expenses.model.Expense;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.panache.common.Page;
 import io.quarkus.panache.common.Sort;

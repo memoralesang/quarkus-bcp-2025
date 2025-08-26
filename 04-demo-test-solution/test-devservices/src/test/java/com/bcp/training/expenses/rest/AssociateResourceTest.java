@@ -1,6 +1,6 @@
-package com.bcp.rest;
+package com.bcp.training.expenses.rest;
 
-import com.bcp.model.Associate;
+import com.bcp.training.expenses.model.Associate;
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 @TestHTTPEndpoint( AssociateResource.class )
+@WithPostgresDB(name = "tc-test", username = "tc-user", password = "tc-pass")
 public class AssociateResourceTest {
 
     @Test

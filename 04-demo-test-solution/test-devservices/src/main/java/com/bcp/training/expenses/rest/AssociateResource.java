@@ -1,6 +1,6 @@
-package com.bcp.rest;
+package com.bcp.training.expenses.rest;
 
-import com.bcp.model.Associate;
+import com.bcp.training.expenses.model.Associate;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

@@ -1,4 +1,4 @@
-package com.bcp.model;
+package com.bcp.training.expenses.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
