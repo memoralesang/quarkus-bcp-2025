@@ -1,4 +1,4 @@
-package com.bcp.training.expenses;
+package com.bcp.training.conference;
 
 import java.net.URI;
 import java.time.LocalDate;

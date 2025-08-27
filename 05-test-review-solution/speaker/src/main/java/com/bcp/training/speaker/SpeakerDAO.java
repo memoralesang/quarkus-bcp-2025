@@ -1,4 +1,4 @@
-package com.bcp.training.expenses;
+package com.bcp.training.speaker;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
-import com.bcp.training.expenses.idgenerator.IdGenerator;
+import com.bcp.training.speaker.idgenerator.IdGenerator;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

@@ -1,4 +1,4 @@
-package com.bcp.training.expenses;
+package com.bcp.training.speaker;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Transient;

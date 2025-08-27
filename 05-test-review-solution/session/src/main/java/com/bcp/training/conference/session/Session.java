@@ -1,6 +1,6 @@
-package com.bcp.training.expenses.session;
+package com.bcp.training.conference.session;
 
-import com.bcp.training.expenses.speaker.Speaker;
+import com.bcp.training.conference.speaker.Speaker;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
 

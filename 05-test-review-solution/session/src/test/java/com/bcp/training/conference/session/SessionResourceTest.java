@@ -1,9 +1,12 @@
-package com.bcp.training.expenses.session;
+package com.bcp.training.conference.session;
 
-import com.bcp.training.expenses.speaker.SpeakerService;
+import com.bcp.training.conference.speaker.Speaker;
+import com.bcp.training.conference.speaker.SpeakerService;
+import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
@@ -13,6 +16,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class SessionResourceTest {
 
     @RestClient
+    @InjectMock
     SpeakerService speakerService;
 
     @Test
@@ -34,6 +38,9 @@ public class SessionResourceTest {
     public void testGetSessionWithSpeaker () {
 
         int speakerId = 12;
+
+        Mockito.when(speakerService.getById(Mockito.anyInt()))
+                .thenReturn(new Speaker(speakerId, "Pablo", "Solar"));
 
         given()
                 .contentType("application/json")

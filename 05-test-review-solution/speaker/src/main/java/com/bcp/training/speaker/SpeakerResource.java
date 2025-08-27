@@ -1,4 +1,4 @@
-package com.bcp.training.expenses;
+package com.bcp.training.speaker;
 
 import java.util.Collection;
 import java.util.Optional;

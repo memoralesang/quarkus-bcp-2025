@@ -1,16 +1,16 @@
-package com.bcp.training.expenses;
+package com.bcp.training.conference;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
-import org.eclipse.microprofile.health.Readiness;
+import org.eclipse.microprofile.health.Liveness;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
-@Readiness
+@Liveness
 @ApplicationScoped
-public class ReadinessCheck implements HealthCheck {
+public class LivenessCheck implements HealthCheck {
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.up("Service is ready");
+        return HealthCheckResponse.up("Service is alive");
     }
 }

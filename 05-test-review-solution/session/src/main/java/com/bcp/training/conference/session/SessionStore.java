@@ -1,10 +1,10 @@
-package com.bcp.training.expenses.session;
+package com.bcp.training.conference.session;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.bcp.training.expenses.speaker.SpeakerService;
+import com.bcp.training.conference.speaker.SpeakerService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;

@@ -1,4 +1,4 @@
-package com.bcp.training.expenses.speaker;
+package com.bcp.training.conference.speaker;
 
 import java.util.List;
 import jakarta.ws.rs.GET;

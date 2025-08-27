@@ -1,4 +1,4 @@
-package com.bcp.training.expenses.session;
+package com.bcp.training.conference.session;
 
 import java.util.Collection;
 import jakarta.ws.rs.GET;

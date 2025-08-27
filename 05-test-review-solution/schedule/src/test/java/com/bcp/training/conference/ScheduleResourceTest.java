@@ -1,4 +1,4 @@
-package com.bcp.training.expenses;
+package com.bcp.training.conference;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -9,11 +9,14 @@ import static org.hamcrest.Matchers.not;
 
 import java.util.List;
 
+import io.quarkus.test.common.http.TestHTTPEndpoint;
+import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import io.restassured.http.ContentType;
 
-
+@QuarkusTest
+@TestHTTPEndpoint(ScheduleResource.class)
 public class ScheduleResourceTest {
 
     private static final int GIVEN_ID = 101;

@@ -1,4 +1,4 @@
-package com.bcp.training.expenses;
+package com.bcp.training.conference;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;

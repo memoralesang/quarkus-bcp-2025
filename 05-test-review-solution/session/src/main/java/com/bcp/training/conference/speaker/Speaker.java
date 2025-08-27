@@ -1,4 +1,4 @@
-package com.bcp.training.expenses.speaker;
+package com.bcp.training.conference.speaker;
 
 public class Speaker {
     public int id;

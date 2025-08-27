@@ -1,11 +1,13 @@
-package com.bcp.training.expenses;
+package com.bcp.training.speaker;
 
-import com.bcp.training.expenses.idgenerator.IdGenerator;
+import com.bcp.training.speaker.idgenerator.IdGenerator;
+import io.quarkus.test.Mock;
+import jakarta.inject.Singleton;
 
 import java.util.UUID;
 
-
-
+@Mock
+@Singleton
 public class DeterministicIdGenerator implements IdGenerator {
 
     private UUID nextUUID = new UUID( 0, 0 );
