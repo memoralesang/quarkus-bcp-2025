@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50e93345-5074-48b1-a4b6-ea4bb3ab3ec0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/joedayz-bank/src/test/java/com/bcp/AccountTypeProcessorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/joedayz-bank/src/test/java/com/bcp/BankAccountsResourceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/joedayz-bank/src/test/java/com/bcp/KafkaTestResourceLifecycleManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fraud-detector/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fraud-detector/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fraud-detector/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fraud-detector/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detector/src/main/resources/import.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/GreetingResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/MyEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/event/BankAccountWasCreated.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/reactive/AccountTypeProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/reactive/AccountTypeProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/resource/BankAccountsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/resource/BankAccountsResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/java/com/bcp/serde/BankAccountWasCreatedDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/joedayz-bank/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/main/resources/import.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/test/java/com/bcp/GreetingResourceIT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/joedayz-bank/src/test/java/com/bcp/GreetingResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/joedayz-bank/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/joedayz-bank/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +34,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/bcp/quarkus-bcp-2025/06-eda-start",
+    "last_opened_file_path": "C:/bcp/quarkus-bcp-2025/06-reactive-eda-start",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +63,7 @@
       <workItem from="1754588563681" duration="609000" />
       <workItem from="1754669085389" duration="240000" />
       <workItem from="1754950101846" duration="415000" />
+      <workItem from="1756332626959" duration="656000" />
     </task>
     <servers />
   </component>
