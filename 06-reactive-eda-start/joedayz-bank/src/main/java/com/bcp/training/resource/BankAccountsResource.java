@@ -1,7 +1,7 @@
-package com.bcp.resource;
+package com.bcp.training.resource;
 
 import com.bcp.event.BankAccountWasCreated;
-import com.bcp.model.BankAccount;
+import com.bcp.training.model.BankAccount;
 import io.quarkus.hibernate.reactive.panache.Panache;
 import io.quarkus.panache.common.Sort;
 import io.smallrye.mutiny.Uni;

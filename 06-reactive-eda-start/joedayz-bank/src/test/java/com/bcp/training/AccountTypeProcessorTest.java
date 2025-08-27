@@ -1,6 +1,6 @@
-package com.bcp;
+package com.bcp.training;
 
-import com.bcp.reactive.AccountTypeProcessor;
+import com.bcp.training.reactive.AccountTypeProcessor;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.smallrye.reactive.messaging.memory.InMemoryConnector;

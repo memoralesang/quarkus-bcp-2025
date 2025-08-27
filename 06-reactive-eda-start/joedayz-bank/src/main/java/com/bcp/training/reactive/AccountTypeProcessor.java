@@ -1,10 +1,7 @@
-package com.bcp.reactive;
+package com.bcp.training.reactive;
 
 import com.bcp.event.BankAccountWasCreated;
-import com.bcp.model.BankAccount;
-import io.smallrye.mutiny.Uni;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.context.control.ActivateRequestContext;
 import jakarta.inject.Inject;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.hibernate.reactive.mutiny.Mutiny;

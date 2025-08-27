@@ -1,4 +1,4 @@
-package com.bcp.model;
+package com.bcp.training.model;
 
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;

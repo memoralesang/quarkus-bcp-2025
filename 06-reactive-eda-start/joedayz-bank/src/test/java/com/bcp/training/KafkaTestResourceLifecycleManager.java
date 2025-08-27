@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training;
 
 import io.quarkus.test.common.QuarkusTestResourceLifecycleManager;
 import io.smallrye.reactive.messaging.memory.InMemoryConnector;

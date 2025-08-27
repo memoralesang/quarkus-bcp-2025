@@ -1,6 +1,6 @@
-package com.bcp;
+package com.bcp.training;
 
-import com.bcp.model.BankAccount;
+import com.bcp.training.model.BankAccount;
 import io.quarkus.panache.mock.PanacheMock;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
