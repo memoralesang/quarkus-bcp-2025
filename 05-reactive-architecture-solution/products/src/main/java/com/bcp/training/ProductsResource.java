@@ -1,5 +1,7 @@
-package com.bcp;
+package com.bcp.training;
 
+import io.smallrye.common.annotation.Blocking;
+import io.smallrye.common.annotation.NonBlocking;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -21,11 +23,12 @@ public class ProductsResource {
 
     @GET
     @Path( "/{productId}/priceHistory" )
-    public ProductPriceHistory getProductPriceHistory( @PathParam( "productId" ) final Long productId ) {
+    public Uni<ProductPriceHistory> getProductPriceHistory( @PathParam( "productId" ) final Long productId ) {
         return pricesService.getProductPriceHistory( productId );
     }
 
     @GET
+    @Blocking
     @Path( "/blocking" )
     public Uni<String> blocking() {
         try {

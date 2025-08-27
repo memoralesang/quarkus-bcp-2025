@@ -1,8 +1,7 @@
-package com.bcp;
-
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+package com.bcp.training;
 
 import io.smallrye.mutiny.Uni;
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -14,5 +13,5 @@ public interface PricesService {
 
     @GET
     @Path( "/history/{productId}" )
-    ProductPriceHistory getProductPriceHistory( @PathParam( "productId" ) final Long productId );
+    Uni<ProductPriceHistory> getProductPriceHistory(@PathParam( "productId" ) final Long productId );
 }

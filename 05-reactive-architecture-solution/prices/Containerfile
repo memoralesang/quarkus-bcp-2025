@@ -1,4 +1,4 @@
-FROM registry.ocp4.example.com:8443/ubi9/python-39
+FROM python:3.9
 
 COPY requirements.txt .
 
