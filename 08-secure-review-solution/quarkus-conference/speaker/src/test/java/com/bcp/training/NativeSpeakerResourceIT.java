@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training;
 
 public class NativeSpeakerResourceIT extends SpeakerResourceTest {
 
