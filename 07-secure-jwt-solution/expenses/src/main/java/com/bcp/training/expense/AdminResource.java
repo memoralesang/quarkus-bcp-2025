@@ -1,5 +1,6 @@
 package com.bcp.training.expense;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -14,6 +15,7 @@ public class AdminResource {
 
     @GET
     @Path( "/expenses" )
+    @RolesAllowed("ADMIN")
     public List<Expense> listAllExpenses() {
         return expenses.list();
     }

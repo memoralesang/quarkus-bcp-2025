@@ -3,6 +3,7 @@ package com.bcp.training.expense;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -16,6 +17,7 @@ public class UserResource {
 
     @GET
     @Path( "/expenses" )
+    @RolesAllowed({"USER"})
     public List<Expense> listUserExpenses( SecurityContext context ) {
         var authenticatedUser = context.getUserPrincipal();
 
