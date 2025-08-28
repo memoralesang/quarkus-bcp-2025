@@ -1,4 +1,4 @@
-package com.bcp.jwt;
+package com.bcp.training.jwt;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -7,7 +7,7 @@ import io.smallrye.jwt.build.Jwt;
 
 public class JwtGenerator {
 
-    private static final String ISSUER = "https://example.com/redhattraining";
+    private static final String ISSUER = "https://example.com/bcptraining";
 
     public static String generateJwtForRegularUser( String username ) {
         return Jwt.issuer( ISSUER )

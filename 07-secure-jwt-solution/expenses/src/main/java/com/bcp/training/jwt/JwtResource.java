@@ -1,4 +1,4 @@
-package com.bcp.jwt;
+package com.bcp.training.jwt;
 
 
 
@@ -7,8 +7,8 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 
-import static com.bcp.jwt.JwtGenerator.generateJwtForAdmin;
-import static com.bcp.jwt.JwtGenerator.generateJwtForRegularUser;
+import static com.bcp.training.jwt.JwtGenerator.generateJwtForAdmin;
+import static com.bcp.training.jwt.JwtGenerator.generateJwtForRegularUser;
 
 @Path( "/jwt" )
 @ApplicationScoped

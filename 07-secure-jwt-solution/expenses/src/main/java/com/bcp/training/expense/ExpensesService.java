@@ -1,4 +1,4 @@
-package com.bcp.expense;
+package com.bcp.training.expense;
 
 import java.util.ArrayList;
 import java.util.List;
