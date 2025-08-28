@@ -1,4 +1,4 @@
-package com.bcp.expenses;
+package com.bcp.training.expenses;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -8,8 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
-
-import org.hibernate.annotations.Type;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 

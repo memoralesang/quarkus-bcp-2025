@@ -1,4 +1,4 @@
-package com.bcp.expenses;
+package com.bcp.training.expenses;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

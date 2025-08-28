@@ -1,4 +1,4 @@
-package com.bcp.expenses;
+package com.bcp.training.expenses;
 
 import org.junit.jupiter.api.Test;
 import io.restassured.http.ContentType;

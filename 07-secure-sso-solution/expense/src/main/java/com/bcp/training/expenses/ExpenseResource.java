@@ -1,4 +1,4 @@
-package com.bcp.expenses;
+package com.bcp.training.expenses;
 import java.util.List;
 import java.util.UUID;
 

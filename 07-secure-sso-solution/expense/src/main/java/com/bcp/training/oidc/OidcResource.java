@@ -1,4 +1,4 @@
-package com.bcp.oidc;
+package com.bcp.training.oidc;
 
 import java.util.Set;
 
