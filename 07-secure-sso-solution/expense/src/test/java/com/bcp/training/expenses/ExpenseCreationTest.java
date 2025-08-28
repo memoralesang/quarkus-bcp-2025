@@ -5,13 +5,14 @@ import io.restassured.http.ContentType;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-@TestHTTPEndpoint( ExpenseResource.class )
+@TestHTTPEndpoint( TestExpenseResource.class )
 public class ExpenseCreationTest {
 
     @Test
@@ -26,7 +27,7 @@ public class ExpenseCreationTest {
                 .then()
                 .statusCode( 200 )
                 .assertThat()
-                .body( "size()", is( 1 ) )
+                .body( "size()", is( 4 ) )
                 .body(
                         containsString( "\"name\":\"Test Expense\"" ),
                         containsString( "\"paymentMethod\":\"" + Expense.PaymentMethod.CASH + "\"" ),
