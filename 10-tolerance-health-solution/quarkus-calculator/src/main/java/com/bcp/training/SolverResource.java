@@ -3,6 +3,7 @@ package com.bcp.training;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.bcp.training.service.SolverService;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;

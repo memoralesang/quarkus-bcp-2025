@@ -1,7 +1,8 @@
 package com.bcp.training;
 
-import com.redhat.training.service.StateService;
 
+
+import com.bcp.training.service.StateService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

@@ -18,7 +18,6 @@ import org.eclipse.microprofile.faulttolerance.Retry;
 
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
-
 /**
  * SessionResource
  */
@@ -35,15 +34,18 @@ public class SessionResource {
 
     public Collection<Session> allSessionsFallback() throws Exception {
         logger.warn("Fallback for GET /sessions");
-        return null;
+        return sessionStore.findAllWithoutEnrichment();
     }
 
     public Response retrieveSessionFallback(final String sessionId) {
         logger.warn("Fallback for GET /sessions/"+sessionId);
-        return null;
+        return sessionStore.findByIdWithoutEnrichment(sessionId)
+                .map(s -> Response.ok(s).build())
+                .orElseThrow(NotFoundException::new);
     }
 
     @GET
+    @Fallback(fallbackMethod="allSessionsFallback")
     public Collection<Session> allSessions() throws Exception {
         return sessionStore.findAll();
     }
@@ -55,6 +57,8 @@ public class SessionResource {
 
     @GET
     @Path("/{sessionId}")
+    @Fallback(fallbackMethod="retrieveSessionFallback")
+    @CircuitBreaker(requestVolumeThreshold = 2, failureRatio = 1, delay = 30_000)
     public Response retrieveSession(@PathParam("sessionId") final String sessionId) {
         final Optional<Session> result = sessionStore.findById(sessionId);
 
@@ -88,6 +92,7 @@ public class SessionResource {
         return session.map(s -> s.speakers).map(l -> Response.ok(l).build()).orElseThrow(NotFoundException::new);
     }
 
+    @Timeout(1000)
     public Optional<Session> findSessionSpeakers(String sessionId) {
         return sessionStore.findById(sessionId);
     }
@@ -95,6 +100,7 @@ public class SessionResource {
     @PUT
     @Path("/{sessionId}/speakers/{speakerName}")
     @Transactional
+    @Retry(maxRetries=60, delay=1_000, retryOn=InternalServerErrorException.class)
     public Response addSessionSpeaker(@PathParam("sessionId") final String sessionId,
                                       @PathParam("speakerName") final String speakerName) {
         final Optional<Session> result = sessionStore.findByIdWithoutEnrichmentMaybeFail(sessionId);
@@ -124,3 +130,4 @@ public class SessionResource {
         throw new NotFoundException();
     }
 }
+
