@@ -3,13 +3,13 @@ package com.bcp.training;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tags;
-import org.apache.commons.lang3.time.StopWatch;
-
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.apache.commons.lang3.time.StopWatch;
+
 import java.util.Set;
 import java.util.UUID;
 import java.util.function.Supplier;
@@ -18,20 +18,39 @@ import java.util.function.Supplier;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ExpenseResource {
+
+    private final StopWatch stopWatch = StopWatch.createStarted();
+
     @Inject
     public ExpenseService expenseService;
 
+    @Inject
+    public MeterRegistry registry;
+
     @PostConstruct
     public void initMeters() {
+        registry.gauge(
+                "timeSinceLastGetExpenses",
+                Tags.of("description", "Time since the last call to GET /expenses"),
+                stopWatch,
+                StopWatch::getTime
+        );
     }
 
     @POST
     public Expense create(Expense expense) {
-        return expenseService.create(expense);
+        registry.counter("callsToPostExpenses").increment();
+        return registry.timer("expenseCreationTime")
+                .wrap(
+                        (Supplier<Expense>) () -> expenseService.create(expense)
+                ).get();
     }
 
     @GET
+    @Counted(value = "callsToGetExpenses")
     public Set<Expense> list() {
+        stopWatch.reset();
+        stopWatch.start();
         return expenseService.list();
     }
 
