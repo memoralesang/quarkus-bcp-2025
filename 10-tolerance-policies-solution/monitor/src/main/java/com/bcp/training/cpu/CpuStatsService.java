@@ -16,6 +16,7 @@ public class CpuStatsService {
     private int callCount = 0;
     List<Double> series;
 
+    @Fallback( fallbackMethod = "getCpuStatsWithMissingValues" )
     public CpuStats getCpuStats() {
         series = getCpuUsageTimeSeries();
         var mean = calculateMean( series );
@@ -23,6 +24,11 @@ public class CpuStatsService {
 
         return new CpuStats( series, mean, standardDeviation );
     }
+
+    public CpuStats getCpuStatsWithMissingValues() {
+        return new CpuStats( series, 0.0, 0.0 );
+    }
+
 
     private List<Double> getCpuUsageTimeSeries() {
         callCount++;
@@ -51,10 +57,11 @@ public class CpuStatsService {
         }
     }
 
-    private Double calculateMean( List<Double> series ) {
+    public Double calculateMean( List<Double> series ) {
         var sum = series.stream().reduce( Double::sum ).get();
         return sum / series.size();
     }
+
 
     private Double calculateStandardDeviation( List<Double> series ) {
         var average = calculateMean( series );

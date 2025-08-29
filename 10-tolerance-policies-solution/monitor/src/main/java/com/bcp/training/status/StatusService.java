@@ -14,6 +14,7 @@ public class StatusService {
 
     private int callCount = 0;
 
+    @Timeout(200)
     @Retry( maxRetries = 5, retryOn = TimeoutException.class )
     public String getStatus() {
         callCount++;

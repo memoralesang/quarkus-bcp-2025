@@ -2,7 +2,7 @@ package com.bcp.training.cpu;
 
 import io.quarkus.logging.Log;
 import jakarta.enterprise.context.ApplicationScoped;
-
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 
 
 @ApplicationScoped
@@ -11,6 +11,7 @@ public class CpuPredictionService {
     private int callCount = 0;
     private long lastCallTime = 0;
 
+    @CircuitBreaker( requestVolumeThreshold = 6, delay = 3000 )
     public Double predictSystemLoad() {
         callCount++;
 

@@ -11,6 +11,7 @@ public class InfoService {
 
     private int callCount = 0;
 
+    @Retry( maxRetries = 5 )
     public Info getInfo() {
         callCount++;
 

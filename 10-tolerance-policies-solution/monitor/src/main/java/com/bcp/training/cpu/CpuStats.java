@@ -13,4 +13,13 @@ public class CpuStats {
         this.mean = mean;
         this.standardDeviation = standardDeviation;
     }
+
+    @Override
+    public String toString() {
+        return "CpuStats{" +
+                "usageTimeSeries=" + usageTimeSeries +
+                ", mean=" + mean +
+                ", standardDeviation=" + standardDeviation +
+                '}';
+    }
 }
