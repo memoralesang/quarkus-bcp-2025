@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training;
 
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;

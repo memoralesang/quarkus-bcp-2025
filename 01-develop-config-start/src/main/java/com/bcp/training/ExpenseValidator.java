@@ -1,4 +1,4 @@
-package com.bcp;
+package com.bcp.training;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
