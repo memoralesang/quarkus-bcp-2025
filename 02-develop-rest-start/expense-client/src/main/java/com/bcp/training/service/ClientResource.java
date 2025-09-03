@@ -2,8 +2,10 @@ package com.bcp.training.service;
 
 import com.bcp.training.client.ExpenseServiceClient;
 import com.bcp.training.model.Expense;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 
 import java.util.Set;
@@ -14,6 +16,8 @@ import java.util.Set;
 public class ClientResource {
 
 
+    @Inject
+    @RestClient
     ExpenseServiceClient service;
 
     @GET
