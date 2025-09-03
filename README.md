@@ -6,3 +6,5 @@ Lab 1: https://docs.google.com/document/d/1QrGMjlKNZaG1-2EGdSstojahwQ9p_r8JL2A3z
 Lab 2: https://docs.google.com/document/d/1naOeoyaTKvnvyyWp4pxmWPxHACcHfxBm7IKHFsSu2p4/edit?usp=sharing
 
 Lab 3: https://docs.google.com/document/d/1uf4L19nEeO93JAyiDtsNZV6khufUkzGhBqnytJppwTs/edit?usp=sharing
+
+Lab 4: https://docs.google.com/document/d/1_weo5U10NOhKhX5dZwC532d3Mv7cNZkKj5bwoUXytOY/edit?usp=sharing
